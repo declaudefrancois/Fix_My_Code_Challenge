@@ -32,7 +32,6 @@ app.use(cookieParser());
 app.use('/',posts);
 
 app.use(function (req, res) {
-
     var data = res.locals.data || {};
     alt.bootstrap(JSON.stringify(data));
     

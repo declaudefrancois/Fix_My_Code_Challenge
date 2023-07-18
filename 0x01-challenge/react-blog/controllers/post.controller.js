@@ -4,7 +4,7 @@ var request = require('superagent'),
     IncludeHandler = require('../src/IncludeHandler');
 
 exports.showAllPosts = function(req,res,next){
-    console.log(req.params.pageNum);
+    console.log("pageNum: ", req.params.pageNum);
     var pageNum = parseInt(req.params.pageNum || 1);
     pageNum -= 1;
 
@@ -114,6 +114,7 @@ exports.loadPostListContent = function(req, res) {
 exports.loadPostsByPage = function(req,res){
     var start = req.params.start;
     var end = req.params.end;
+    console.log('controller.loadPostsByPage', { params: req.params });
     request.get(config.baseUrl+'/static/posts.json',function(err,response){
 
         res.json(response.body.posts.filter(function(post, index) {

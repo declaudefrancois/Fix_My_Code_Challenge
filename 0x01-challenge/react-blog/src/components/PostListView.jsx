@@ -52,7 +52,6 @@ var PostListView = React.createClass({
 
     render : function() {
         var posts = this.state.postsByPage[this.pageNum] || [];
-
         posts = posts.map(function(post){
             return (
                 <PostPreview key={post.id} post={post} />
@@ -65,7 +64,7 @@ var PostListView = React.createClass({
                 <PostListHeader header={this.state.postListContent.header} content={this.state.postListContent.content}/>
 
                 <div className="post-list">
-                    {posts}
+		    { posts }
                 </div>
 
                 <div className="pagination-wrapper">

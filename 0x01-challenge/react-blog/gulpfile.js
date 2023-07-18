@@ -11,8 +11,9 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     fs = require('fs'),
     print = require('gulp-print'),
-    uglify = require('gulp-uglify'),
-    sass = require('gulp-sass');
+    uglify = require('gulp-uglify');
+
+const sass = require('gulp-sass')(require('sass'));
 
 var getIncludesByType = function(type, includePublicPath) {
     var allIncludes = [];
